@@ -5,6 +5,9 @@ using UnityEngine;
 public class PianoScript : MonoBehaviour
 {
 
+    //particlesystem
+    public ParticleSystem keyTrigger;
+
     [SerializeField]private float Yincrement = 0.01f;
     private Vector2 targetPos;
 
@@ -26,9 +29,10 @@ public class PianoScript : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Keypad0)) //C
             {
+                keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                transform.position = targetPos;
+                /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;*/
             }
         }
         if (gameObject.CompareTag("C_Sharp"))
