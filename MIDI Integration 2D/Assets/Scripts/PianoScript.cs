@@ -39,99 +39,110 @@ public class PianoScript : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.Keypad1)) //C#
             {
+                keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                transform.position = targetPos;
+                /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;*/
             }
         }
         if (gameObject.CompareTag("D"))
         {
             if (Input.GetKey(KeyCode.Keypad2)) //D
             {
+                keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                transform.position = targetPos;
+                /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;*/
             }
         }
         if (gameObject.CompareTag("D_Sharp"))
         {
             if (Input.GetKey(KeyCode.Keypad3)) //D#
             {
+                keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                transform.position = targetPos;
+                /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;*/
             }
         }
         if (gameObject.CompareTag("E"))
         {
             if (Input.GetKey(KeyCode.Keypad4)) //E
             {
+                keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                transform.position = targetPos;
+                /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;*/
             }
         }
         if (gameObject.CompareTag("F"))
         {
             if (Input.GetKey(KeyCode.Keypad5)) //F
             {
+                keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                transform.position = targetPos;
+                /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;*/
             }
         }
         if (gameObject.CompareTag("F_Sharp"))
         {
             if (Input.GetKey(KeyCode.Keypad6)) //F#
             {
+                keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                transform.position = targetPos;
+                /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;*/
             }
         }
         if (gameObject.CompareTag("G"))
         {
             if (Input.GetKey(KeyCode.Keypad7)) //G
             {
+                keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                transform.position = targetPos;
+                /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;*/
             }
         }
         if (gameObject.CompareTag("G_Sharp"))
         {
             if (Input.GetKey(KeyCode.Keypad8)) //G#
             {
+                keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                transform.position = targetPos;
+                /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;*/
             }
         }
         if (gameObject.CompareTag("A"))
         {
             if (Input.GetKey(KeyCode.Keypad9)) //A
             {
+                keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                transform.position = targetPos;
+                /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;*/
             }
         }
         if (gameObject.CompareTag("A_Sharp"))
         {
             if (Input.GetKey(KeyCode.T)) //A#
             {
+                keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                transform.position = targetPos;
+                /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;*/
             }
         }
         if (gameObject.CompareTag("B"))
         {
             if (Input.GetKey(KeyCode.E)) //B
             {
+                keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                transform.position = targetPos;
+                /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;*/
             }
         }
     }
