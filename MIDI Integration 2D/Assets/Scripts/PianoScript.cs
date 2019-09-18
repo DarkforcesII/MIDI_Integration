@@ -145,5 +145,15 @@ public class PianoScript : MonoBehaviour
                 transform.position = targetPos;*/
             }
         }
+        if (gameObject.CompareTag("C_5"))
+        {
+            if (Input.GetKeyUp(KeyCode.C)) //B
+            {
+                keyTrigger.Emit(1);
+                GetComponent<AudioSource>().PlayOneShot(KeysClip);
+                /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;*/
+            }
+        }
     }
 }

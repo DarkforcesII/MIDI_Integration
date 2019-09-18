@@ -3,7 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - E
+  - D_Sharp
+  - C_Sharp
+  - D
+  - G
+  - A
+  - F_Sharp
+  - G_Sharp
+  - A_Sharp
+  - F
+  - C
+  - B
+  - C_5
   layers:
   - Default
   - TransparentFX
