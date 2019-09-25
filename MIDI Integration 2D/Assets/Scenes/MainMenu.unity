@@ -631,6 +631,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1065311797}
+        m_MethodName: OnModeSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1065311795}
         m_MethodName: OnLevelChange
         m_Mode: 1
@@ -803,9 +814,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bassLine: {fileID: 8300000, guid: 205d88bcec0e89a4aa87d0726b29a442, type: 3}
   chords: {fileID: 8300000, guid: 3931c86d35c515943848f2f9368cf315, type: 3}
-  MouseHover: {fileID: 8300000, guid: 5352b59797867674bbc5d3ad28a395fa, type: 3}
+  MenuSelect: {fileID: 8300000, guid: 5352b59797867674bbc5d3ad28a395fa, type: 3}
   melody: {fileID: 8300000, guid: b237165a7689ef64cac8960adac4295f, type: 3}
   strings: {fileID: 8300000, guid: 9b26561c39e57a743abbaddf13be69e0, type: 3}
+  ModeSelect: {fileID: 8300000, guid: 62d0439956c6c024aa9641e6e3524a8c, type: 3}
 --- !u!114 &1065311798
 MonoBehaviour:
   m_ObjectHideFlags: 0

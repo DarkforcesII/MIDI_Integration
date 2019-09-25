@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System;
 
 public class LevelTransition : MonoBehaviour
 {
@@ -14,6 +15,13 @@ public class LevelTransition : MonoBehaviour
 
     public void OnLevelChange()
     {
+        StartCoroutine(LevelChange());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    IEnumerator LevelChange()
+    {
+        yield return null; /*WaitForSecondsRealtime(5f);*/
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

@@ -20,6 +20,7 @@ public class AudioStems : MonoBehaviour
         StartCoroutine(Chords());
         StartCoroutine(Melody());
         StartCoroutine(BassLine());
+        StartCoroutine(Strings());
     }
 
     public void OnMouseClick()
@@ -30,6 +31,11 @@ public class AudioStems : MonoBehaviour
     public void OnMouseEnter()
     {
         GetComponent<AudioSource>().PlayOneShot(MenuSelect);
+    }
+
+    public void OnModeSelect()
+    {
+        GetComponent<AudioSource>().PlayOneShot(ModeSelect);
     }
 
     IEnumerator Chords()
@@ -48,9 +54,9 @@ public class AudioStems : MonoBehaviour
             while (true)
             {
                 GetComponent<AudioSource>().PlayOneShot(bassLine);
+                yield return new WaitForSecondsRealtime(27.428f);
             }
         }
-        yield return new WaitForSecondsRealtime(27.428f);
     }
 
     IEnumerator Melody()
