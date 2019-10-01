@@ -23,18 +23,24 @@ public class AudioStems : MonoBehaviour
         StartCoroutine(Strings());
     }
 
-    public void OnMouseClick()
+    /*public void OnMouseClick()
     {
-        GetComponent<AudioSource>().PlayOneShot(MenuSelect);
-    }
+        GetComponent<AudioSource>().PlayOneShot(ModeSelect);
+    }*/
 
     public void OnMouseEnter()
     {
         GetComponent<AudioSource>().PlayOneShot(MenuSelect);
     }
 
-    public void OnModeSelect()
+    public void OnCreditsSelect()
     {
+        GetComponent<AudioSource>().PlayOneShot(ModeSelect);
+    }
+
+    public void OnPressPlay_Quit()
+    {
+        GetComponent<AudioSource>().Stop();
         GetComponent<AudioSource>().PlayOneShot(ModeSelect);
     }
 

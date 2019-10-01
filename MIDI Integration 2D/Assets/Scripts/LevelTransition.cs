@@ -9,19 +9,37 @@ public class LevelTransition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Scene scene = SceneManager.GetActiveScene();
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Retreive name of scene
+        string sceneName = currentScene.name;
+
+        if (sceneName == "Prototype")
+        {
+            StartCoroutine(Level_2());
+        }
 
     }
 
-    public void OnLevelChange()
+    public void ToPrototypeLevel()
     {
-        StartCoroutine(LevelChange());
+        StartCoroutine(PrototypeLevel());
+    }
+
+    IEnumerator PrototypeLevel()
+    {
+        yield return new WaitForSecondsRealtime(3.5f); 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    IEnumerator LevelChange()
+    /*public void ToLevel_2()
     {
-        yield return null; /*WaitForSecondsRealtime(5f);*/
+        StartCoroutine(Level_2());
+    }*/
+
+    IEnumerator Level_2()
+    {
+        yield return new WaitForSecondsRealtime(60); 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
