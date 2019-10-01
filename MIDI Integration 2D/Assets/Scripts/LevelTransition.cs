@@ -14,7 +14,7 @@ public class LevelTransition : MonoBehaviour
         // Retreive name of scene
         string sceneName = currentScene.name;
 
-        if (sceneName == "Prototype")
+        if (sceneName == "Prototype") 
         {
             StartCoroutine(Level_2());
         }
@@ -39,7 +39,7 @@ public class LevelTransition : MonoBehaviour
 
     IEnumerator Level_2()
     {
-        yield return new WaitForSecondsRealtime(60); 
+        yield return new WaitForSecondsRealtime(20); 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
