@@ -19,6 +19,11 @@ public class LevelTransition : MonoBehaviour
             StartCoroutine(Level_2());
         }
 
+        if (sceneName == "Level_2")
+        {
+            StartCoroutine(EarTraining());
+        }
+
     }
 
     public void ToPrototypeLevel()
@@ -40,6 +45,12 @@ public class LevelTransition : MonoBehaviour
     IEnumerator Level_2()
     {
         yield return new WaitForSecondsRealtime(20); 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    IEnumerator EarTraining()
+    {
+        yield return new WaitForSecondsRealtime(20);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

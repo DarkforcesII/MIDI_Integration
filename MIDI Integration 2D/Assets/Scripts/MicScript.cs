@@ -5,6 +5,8 @@ using UnityEngine;
 public class MicScript : MonoBehaviour
 {
     public static string[] devices;
+    private AudioSource audioSource;
+    public AudioClip MicInput;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +20,15 @@ public class MicScript : MonoBehaviour
         // Start recording with built in Microphone and play recorded audio right away
         AudioSource micInput = GetComponent<AudioSource>();
         micInput.clip = Microphone.Start("Realtek High Definition Audio", true, 10, 44100);
-        /*micInput.Play();*/
-        /*GetComponent<AudioSource>().PlayOneShot(AudioClip);*/
+        micInput.Play();
+        GetComponent<AudioSource>().PlayOneShot(MicInput);
+    }
+
+    void UpdateMicInput()
+    {
+        //micInput.Stop();
+        // start recoridng
+        //audioSource.clip = Microphone.Start(Microphone)
     }
 
     // Update is called once per frame
