@@ -15,30 +15,38 @@ public class MicrophoneInput : MonoBehaviour
         foreach (var device in Microphone.devices)
         {
             Debug.Log("Name:" + device);
+            //get components you'll need
+		    audioSource = GetComponent<AudioSource> ();
         }
+        //initialize input with default mic
+        UpdateMicrophone();
     }
 
     void UpdateMicrophone()
     {
-        audioSource.Stop();
-        // Start recording to audio clip from the mic
-        audioSource.clip = Microphone.Start("Microphone", true, 10, audioSampleRate);
+        //audioSource.Stop();
+        //Start recording to audioclip from the mic
+        audioSource.clip = Microphone.Start("Realtek Mic (Realtek High Definition Audio)", true, 10, audioSampleRate);
         audioSource.loop = true;
-        // Prevent feedback loop
-        Debug.Log(Microphone.IsRecording("Microphone").ToString());
+        // Mute the sound with an Audio Mixer group becuase we don't want the player to hear it
+        Debug.Log(Microphone.IsRecording("Realtek Mic (Realtek High Definition Audio)").ToString());
 
-        if (Microphone.IsRecording("Microphone")) // checks that mic is actually recoridng
-        {
-            while (!(Microphone.GetPosition("Microphone") > 0))
-                Debug.Log("recording started with" + "Microphone");
+        if (Microphone.IsRecording("Realtek Mic (Realtek High Definition Audio)"))
+        { //check that the mic is recording, otherwise you'll get stuck in an infinite loop waiting for it to start
+            while (!(Microphone.GetPosition("Realtek Mic (Realtek High Definition Audio)") > 0))
+            {
+            } // Wait until the recording has started. 
 
-            // start playing audio source
+            Debug.Log("recording started with " + "Realtek Mic (Realtek High Definition Audio)");
+
+            // Start playing the audio source
             audioSource.Play();
         }
         else
         {
-            // for whatever reason mic doesn't work
-            Debug.Log("Realtek High Definition Audio" + "doesn't work!");
+            //microphone doesn't work for some reason
+
+            Debug.Log("Realtek Mic (Realtek High Definition Audio)" + " doesn't work!");
         }
     }
     // Update is called once per frame

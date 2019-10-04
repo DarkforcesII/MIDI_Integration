@@ -14924,6 +14924,7 @@ GameObject:
   - component: {fileID: 576831974}
   - component: {fileID: 576831973}
   - component: {fileID: 576831972}
+  - component: {fileID: 576831976}
   m_Layer: 0
   m_Name: Piano
   m_TagString: Untagged
@@ -15004,6 +15005,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 74.57, y: 180.79, z: 0}
+--- !u!114 &576831976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576831971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21715c19b0f92d4ba7c43933333d4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyTrigger: {fileID: 0}
+  Yincrement: 0.01
+  KeysClip: {fileID: 0}
 --- !u!1 &729578916
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class PleaseWork : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < 129; i++)
+        for (int i = 0; i < 100; i++)
         {
 
 

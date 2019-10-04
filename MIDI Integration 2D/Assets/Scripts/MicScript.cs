@@ -6,7 +6,7 @@ public class MicScript : MonoBehaviour
 {
     public static string[] devices;
     private AudioSource audioSource;
-    public AudioClip MicInput;
+    AudioClip MicInput;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +18,14 @@ public class MicScript : MonoBehaviour
         }
 
         // Start recording with built in Microphone and play recorded audio right away
-        AudioSource micInput = GetComponent<AudioSource>();
-        micInput.clip = Microphone.Start("Realtek High Definition Audio", true, 10, 44100);
-        micInput.Play();
-        GetComponent<AudioSource>().PlayOneShot(MicInput);
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = Microphone.Start("Realtek Mic (Realtek High Definition Audio)", true, 10, 48000);
+        Microphone.IsRecording("Realtek Mic (Realtek High Definition Audio)");
+        audioSource.Play();
+        audioSource.loop = true;
+
+        /*GetComponent<AudioSource>().PlayOneShot(MicInput);*/
+
     }
 
     void UpdateMicInput()
