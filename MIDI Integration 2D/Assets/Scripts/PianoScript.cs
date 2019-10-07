@@ -29,7 +29,7 @@ public class PianoScript : MonoBehaviour
     {
         if (gameObject.CompareTag("C"))
         {
-            if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 60) || Input.GetKeyUp(KeyCode.Keypad0)) //C
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60) || Input.GetKeyUp(KeyCode.Keypad0)) //C
             {
                 keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
@@ -39,7 +39,7 @@ public class PianoScript : MonoBehaviour
         }
         if (gameObject.CompareTag("C_Sharp"))
         {
-            if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 61) || Input.GetKeyUp(KeyCode.Keypad1)) //C#
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 61) || Input.GetKeyUp(KeyCode.Keypad1)) //C#
             {
                 keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
@@ -49,7 +49,7 @@ public class PianoScript : MonoBehaviour
         }
         if (gameObject.CompareTag("D"))
         {
-            if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 62) || Input.GetKeyUp(KeyCode.Keypad2)) //D
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 62) || Input.GetKeyUp(KeyCode.Keypad2)) //D
             {
                 keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
@@ -59,7 +59,7 @@ public class PianoScript : MonoBehaviour
         }
         if (gameObject.CompareTag("D_Sharp"))
         {
-            if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 63) || Input.GetKeyUp(KeyCode.Keypad3)) //D#
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 63) || Input.GetKeyUp(KeyCode.Keypad3)) //D#
             {
                 keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
@@ -69,7 +69,7 @@ public class PianoScript : MonoBehaviour
         }
         if (gameObject.CompareTag("E"))
         {
-            if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 64) || Input.GetKeyUp(KeyCode.Keypad4)) //E
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 64) || Input.GetKeyUp(KeyCode.Keypad4)) //E
             {
                 keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
@@ -79,7 +79,7 @@ public class PianoScript : MonoBehaviour
         }
         if (gameObject.CompareTag("F"))
         {
-            if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 65) || Input.GetKeyUp(KeyCode.Keypad5)) //F
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 65) || Input.GetKeyUp(KeyCode.Keypad5)) //F
             {
                 keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
@@ -89,7 +89,7 @@ public class PianoScript : MonoBehaviour
         }
         if (gameObject.CompareTag("F_Sharp"))
         {
-            if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 66) || Input.GetKeyUp(KeyCode.Keypad6)) //F#
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 66) || Input.GetKeyUp(KeyCode.Keypad6)) //F#
             {
                 keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
@@ -99,7 +99,7 @@ public class PianoScript : MonoBehaviour
         }
         if (gameObject.CompareTag("G"))
         {
-            if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 67) || Input.GetKeyUp(KeyCode.Keypad7)) //G
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 67) || Input.GetKeyUp(KeyCode.Keypad7)) //G
             {
                 keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
@@ -109,7 +109,7 @@ public class PianoScript : MonoBehaviour
         }
         if (gameObject.CompareTag("G_Sharp"))
         {
-            if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 68) || Input.GetKeyUp(KeyCode.Keypad8)) //G#
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 68) || Input.GetKeyUp(KeyCode.Keypad8)) //G#
             {
                 keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
@@ -119,7 +119,7 @@ public class PianoScript : MonoBehaviour
         }
         if (gameObject.CompareTag("A"))
         {
-            if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 69) || Input.GetKeyUp(KeyCode.Keypad9)) //A
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 69) || Input.GetKeyUp(KeyCode.Keypad9)) //A
             {
                 keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
@@ -129,7 +129,7 @@ public class PianoScript : MonoBehaviour
         }
         if (gameObject.CompareTag("A_Sharp"))
         {
-            if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 70) || Input.GetKeyUp(KeyCode.T)) //A#
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 70) || Input.GetKeyUp(KeyCode.T)) //A#
             {
                 keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
@@ -139,7 +139,7 @@ public class PianoScript : MonoBehaviour
         }
         if (gameObject.CompareTag("B"))
         {
-            if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 71) || Input.GetKeyUp(KeyCode.E)) //B
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 71) || Input.GetKeyUp(KeyCode.E)) //B
             {
                 keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);
@@ -149,7 +149,7 @@ public class PianoScript : MonoBehaviour
         }
         if (gameObject.CompareTag("C_5"))
         {
-            if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 72) || Input.GetKeyUp(KeyCode.C)) //C
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72) || Input.GetKeyUp(KeyCode.C)) //C
             {
                 keyTrigger.Emit(1);
                 GetComponent<AudioSource>().PlayOneShot(KeysClip);

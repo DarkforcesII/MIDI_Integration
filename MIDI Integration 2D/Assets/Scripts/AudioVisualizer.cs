@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioVisualizer : MonoBehaviour
 {
-    [SerializeField]private Transform[] audioSpectrumObjects;
+    [SerializeField] private Transform[] audioSpectrumObjects;
     public float heightMultiplier;
     public int numberOfSamples = 1024;
     public FFTWindow fftWindow;
