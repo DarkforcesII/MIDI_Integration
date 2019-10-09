@@ -5,7 +5,6 @@ using MidiJack;
 
 public class PianoScript : MonoBehaviour
 {
-
     //particlesystem
     public ParticleSystem keyTrigger;
 
