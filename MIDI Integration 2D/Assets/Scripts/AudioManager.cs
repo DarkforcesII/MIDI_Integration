@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    internal void PlayMusic(string v)
+    internal void PlayMusic(string v, int v1)
     {
         throw new NotImplementedException();
     }
@@ -53,6 +53,7 @@ public class AudioManager : MonoBehaviour
         musicSource2 = this.gameObject.AddComponent<AudioSource>();
         sfxSource = this.gameObject.AddComponent<AudioSource>();
 
+       
         // Loop music tracks
         musicSource.loop = true;
         musicSource2.loop = true;
