@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
+using MidiJack;
 
 public class LevelTransition : MonoBehaviour
 {
+    private AudioClip C;
     // Start is called before the first frame update
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
+
+        C = Resources.Load<AudioClip>("Audio/C_4");
 
         // Retreive name of scene
         string sceneName = currentScene.name;
@@ -44,21 +48,20 @@ public class LevelTransition : MonoBehaviour
 
     IEnumerator Level_2()
     {
-        yield return new WaitForSecondsRealtime(20); 
+        yield return new WaitForSecondsRealtime(10);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     IEnumerator EarTraining()
     {
-        yield return new WaitForSecondsRealtime(20);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        yield return new WaitForSecondsRealtime(10);
+        AudioManager.Instance.PlaySFX(C);
     }
 
     public void OnApplicationQuit()
     {
         Application.Quit();
         print("I Quit");
-
     }
 
     // Update is called once per frame
@@ -67,6 +70,16 @@ public class LevelTransition : MonoBehaviour
       if (Input.GetKeyDown(KeyCode.Escape))
         {
             OnApplicationQuit();
+        }
+      if (Input.GetKeyDown(KeyCode.R))
+        {
+            AudioManager.Instance.PlaySFX(C);
+        }
+
+      // This allows players to progress at their own pace
+      if (Input.GetKeyDown(KeyCode.Return))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

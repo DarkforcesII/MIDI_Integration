@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MidiJack;
+using UnityEngine.SceneManagement;
 
 public class PianoScript : MonoBehaviour
 {
@@ -20,8 +21,17 @@ public class PianoScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Find scene
+        Scene currentScene = SceneManager.GetActiveScene();
+        // Retreive name of scene
+        string sceneName = currentScene.name;
+        if (sceneName == "Prototype")
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+
         // Don't destroy the script
-        DontDestroyOnLoad(transform.gameObject);
+        DontDestroyOnLoad(this.gameObject);
         /*audioClip1 = Resources.Load<AudioClip>("Audio/C#_4");*/ // save for later
 }
 

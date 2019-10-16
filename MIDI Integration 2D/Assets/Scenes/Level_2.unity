@@ -127,7 +127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &24740241
 Transform:
   m_ObjectHideFlags: 0
@@ -10036,7 +10036,7 @@ GameObject:
   - component: {fileID: 375401089}
   - component: {fileID: 375401088}
   m_Layer: 5
-  m_Name: Welcome
+  m_Name: EarTrainingExercise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10058,8 +10058,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 226.2}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 3.8, y: 59.1}
+  m_SizeDelta: {x: 512.9, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375401088
 MonoBehaviour:
@@ -10087,14 +10087,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 60
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Welcome to Piano Player '
+  m_Text: Ear Training Excercise
 --- !u!222 &375401089
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10228,11 +10228,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521969870}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a06385ad617b6fd4ea7151a195897bc0, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f732529de4a2e240ae9195ba38ce239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyClips:
+  - {fileID: 8300000, guid: 42777d7d9888f604cbaf894ef44256a8, type: 3}
+  - {fileID: 8300000, guid: 74f21a9b0a1ae3a4b9647703f5c7b050, type: 3}
+  - {fileID: 8300000, guid: 47a680bba9b31bb44958fabc5ee07d9f, type: 3}
+  - {fileID: 8300000, guid: eb82906956ade3a4eac7b0f748146514, type: 3}
+  - {fileID: 8300000, guid: fa92a1d3142e35e42a4d54214df19650, type: 3}
+  - {fileID: 8300000, guid: 79295a2da80336742bd91661588d2943, type: 3}
+  - {fileID: 8300000, guid: ebd23fc5c359eb342ad61518846f777e, type: 3}
+  - {fileID: 8300000, guid: 8fa4280e978347e418a6febddf048b26, type: 3}
+  - {fileID: 8300000, guid: 0f36f36536ed511468cb5e2603522809, type: 3}
+  - {fileID: 8300000, guid: 7f30f72be06550848911a4b7a3b70467, type: 3}
+  - {fileID: 8300000, guid: b82759fa71a941a4cb8ae677ea056439, type: 3}
+  - {fileID: 8300000, guid: 1b7b1cc9f83bfd249979cc7e796d2cef, type: 3}
+  - {fileID: 8300000, guid: 076148d59674e4841b7831a93962ebac, type: 3}
 --- !u!81 &521969872
 AudioListener:
   m_ObjectHideFlags: 0
@@ -10291,7 +10305,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521969870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.2799997, y: 0.6081872, z: -10}
+  m_LocalPosition: {x: 212.1, y: 61.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -25099,7 +25113,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &664751644
 Transform:
   m_ObjectHideFlags: 0
@@ -54587,13 +54601,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620874895}
-  m_LocalRotation: {x: -0.0041761687, y: 0.79561335, z: -0.6057656, w: -0.0054849857}
-  m_LocalPosition: {x: 5.1474648, y: 0.8803906, z: 5.5869646}
-  m_LocalScale: {x: 1.1363386, y: 0.9897385, z: 0.8649885}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 212.1, y: 61.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1865261023}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 74.57, y: 180.79, z: 0}
+  m_Father: {fileID: 1706507843}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1620874897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54792,6 +54806,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2057956185}
+  - {fileID: 1620874896}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -59740,8 +59755,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.5145044, y: -0.72630596, z: 22.56827}
   m_LocalScale: {x: 0.88, y: 1.17, z: 1}
-  m_Children:
-  - {fileID: 1620874896}
+  m_Children: []
   m_Father: {fileID: 24740241}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -59821,7 +59835,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -64530,7 +64544,7 @@ GameObject:
   - component: {fileID: 2057956187}
   - component: {fileID: 2057956186}
   m_Layer: 5
-  m_Name: Play Around
+  m_Name: HearingPitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64552,8 +64566,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 174.62}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 5.6, y: 0}
+  m_SizeDelta: {x: 508.3, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057956186
 MonoBehaviour:
@@ -64577,18 +64591,21 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
-    m_FontStyle: 1
+    m_FontSize: 30
+    m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 60
     m_Alignment: 0
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Try out the piano and make sure you can hear sound
+  m_Text: You're about to hear a pitch. After you've listened to it, identify the
+    note on the piano that corresponds to that pitch and press it to move on. If you
+    need to listen to the pitch again, press R. Press enter once you've found the
+    correct pitch.
 --- !u!222 &2057956187
 CanvasRenderer:
   m_ObjectHideFlags: 0
