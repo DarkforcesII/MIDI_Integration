@@ -9,11 +9,11 @@ public class GeneralPianoScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    // Called in update so notes in this ocatave can be played
+    private void Octave_4()
     {
         if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60) || Input.GetKeyUp(KeyCode.Keypad0)) //C
         {
@@ -63,9 +63,19 @@ public class GeneralPianoScript : MonoBehaviour
         {
             AudioManager.Instance.PlaySFX(keyClips[11]);
         }
+    }
+    private void Octave_5()
+    {
         if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72) || Input.GetKeyUp(KeyCode.E)) //C
         {
             AudioManager.Instance.PlaySFX(keyClips[12]);
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Octave_4();
+        Octave_5();
     }
 }
