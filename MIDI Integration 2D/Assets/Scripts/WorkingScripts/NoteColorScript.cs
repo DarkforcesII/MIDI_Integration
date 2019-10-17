@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class NoteColorScript : MonoBehaviour
 {
 
-    Renderer render;
+    private Renderer render;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class NoteColorScript : MonoBehaviour
             }
             else if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 60) || Input.GetKeyUp(KeyCode.Keypad0))
             {
-                render.material.SetColor("_Color", Color.black);
+                render.material.SetColor("_Color", Color.white);
             }
         }
         if (gameObject.CompareTag("C_Sharp"))
@@ -47,7 +47,7 @@ public class NoteColorScript : MonoBehaviour
             }
             else if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 62) || Input.GetKeyUp(KeyCode.Keypad2))
             {
-                render.material.SetColor("_Color", Color.black);
+                render.material.SetColor("_Color", Color.white);
             }
         }
         if (gameObject.CompareTag("D_Sharp"))
@@ -69,7 +69,7 @@ public class NoteColorScript : MonoBehaviour
             }
             else if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 64) || Input.GetKeyUp(KeyCode.Keypad4))
             {
-                render.material.SetColor("_Color", Color.black);
+                render.material.SetColor("_Color", Color.white);
             }
         }
         if (gameObject.CompareTag("F"))
@@ -80,7 +80,7 @@ public class NoteColorScript : MonoBehaviour
             }
             else if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 65) || Input.GetKeyUp(KeyCode.Keypad5))
             {
-                render.material.SetColor("_Color", Color.black);
+                render.material.SetColor("_Color", Color.white);
             }
         }
         if (gameObject.CompareTag("F_Sharp"))
@@ -102,7 +102,7 @@ public class NoteColorScript : MonoBehaviour
             }
             else if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 67) || Input.GetKeyUp(KeyCode.Keypad7))
             {
-                render.material.SetColor("_Color", Color.black);
+                render.material.SetColor("_Color", Color.white);
             }
         }
         if (gameObject.CompareTag("G_Sharp"))
@@ -124,7 +124,7 @@ public class NoteColorScript : MonoBehaviour
             }
             else if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 69) || Input.GetKeyUp(KeyCode.Keypad9))
             {
-                render.material.SetColor("_Color", Color.black);
+                render.material.SetColor("_Color", Color.white);
             }
         }
         if (gameObject.CompareTag("A_Sharp"))
@@ -146,13 +146,13 @@ public class NoteColorScript : MonoBehaviour
             }
             else if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 71) || Input.GetKeyUp(KeyCode.E))
             {
-                render.material.SetColor("_Color", Color.black);
+                render.material.SetColor("_Color", Color.white);
             }
         }
     }
     private void Octave_5()
     {
-        if (gameObject.CompareTag("C_5"))
+        if (gameObject.CompareTag("C"))
         {
             if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72) || Input.GetKeyDown(KeyCode.C)) //C
             {
@@ -160,7 +160,7 @@ public class NoteColorScript : MonoBehaviour
             }
             else if (MidiDriver.Instance.GetKeyUp(MidiChannel.All, 72) || Input.GetKeyUp(KeyCode.C))
             {
-                render.material.SetColor("_Color", Color.black);
+                render.material.SetColor("_Color", Color.white);
             }
         }
     }
