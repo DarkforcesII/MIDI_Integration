@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_2.unity
     guid: 990ede9b39427a64bb5b26ff132a7035
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/EarTraining.unity
     guid: 8e665648d821f1b4bbb65c82322832bc
   m_configObjects: {}

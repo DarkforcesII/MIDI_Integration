@@ -11,9 +11,9 @@ public class LevelTransition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
-
         C = Resources.Load<AudioClip>("Audio/C_4");
+
+         Scene currentScene = SceneManager.GetActiveScene();
 
         // Retreive name of scene
         string sceneName = currentScene.name;
@@ -25,7 +25,7 @@ public class LevelTransition : MonoBehaviour
 
         if (sceneName == "Level_2")
         {
-            StartCoroutine(EarTraining());
+            StartCoroutine(EarTrainingStart());
         }
 
     }
@@ -52,7 +52,7 @@ public class LevelTransition : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    IEnumerator EarTraining()
+    IEnumerator EarTrainingStart()
     {
         yield return new WaitForSecondsRealtime(10);
         AudioManager.Instance.PlaySFX(C);
@@ -74,12 +74,6 @@ public class LevelTransition : MonoBehaviour
       if (Input.GetKeyDown(KeyCode.R))
         {
             AudioManager.Instance.PlaySFX(C);
-        }
-
-      // This allows players to progress at their own pace
-      if (Input.GetKeyDown(KeyCode.Return))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
