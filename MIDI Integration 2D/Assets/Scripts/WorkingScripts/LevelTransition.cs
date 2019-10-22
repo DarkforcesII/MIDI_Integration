@@ -8,12 +8,16 @@ using MidiJack;
 public class LevelTransition : MonoBehaviour
 {
     private AudioClip C;
+    private AudioClip E;
+    private AudioClip A;
     // Start is called before the first frame update
     void Start()
     {
         C = Resources.Load<AudioClip>("Audio/C_4");
+        E = Resources.Load<AudioClip>("Audio/E_4");
+        A = Resources.Load<AudioClip>("Audio/A_4");
 
-         Scene currentScene = SceneManager.GetActiveScene();
+        Scene currentScene = SceneManager.GetActiveScene();
 
         // Retreive name of scene
         string sceneName = currentScene.name;
@@ -26,6 +30,11 @@ public class LevelTransition : MonoBehaviour
         if (sceneName == "Level_2")
         {
             StartCoroutine(EarTrainingStart());
+        }
+
+        if (sceneName == "Intervals_Part_1")
+        {
+            StartCoroutine(Intervals_Part_1());
         }
 
     }
@@ -41,11 +50,6 @@ public class LevelTransition : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    /*public void ToLevel_2()
-    {
-        StartCoroutine(Level_2());
-    }*/
-
     IEnumerator Level_2()
     {
         yield return new WaitForSecondsRealtime(10);
@@ -56,6 +60,18 @@ public class LevelTransition : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(10);
         AudioManager.Instance.PlaySFX(C);
+    }
+
+    IEnumerator Intervals_Part_1()
+    {
+        yield return new WaitForSecondsRealtime(10);
+        AudioManager.Instance.PlaySFX(C);
+        yield return new WaitForSecondsRealtime(4);
+        AudioManager.Instance.PlaySFX(E);
+        yield return new WaitForSecondsRealtime(4);
+        AudioManager.Instance.PlaySFX(C);
+        yield return new WaitForSecondsRealtime(4);
+        AudioManager.Instance.PlaySFX(A);
     }
 
     public void OnApplicationQuit()
@@ -74,6 +90,10 @@ public class LevelTransition : MonoBehaviour
       if (Input.GetKeyDown(KeyCode.R))
         {
             AudioManager.Instance.PlaySFX(C);
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            StartCoroutine(Intervals_Part_1());
         }
     }
 }

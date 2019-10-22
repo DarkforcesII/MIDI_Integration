@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using MidiJack;
 
-public class Level_2 : MonoBehaviour
+public class Level_3 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,16 +16,24 @@ public class Level_2 : MonoBehaviour
         // Retreive name of scene
         string sceneName = currentScene.name;
 
-        if (sceneName == "Level_2")
+        if (sceneName == "Intervals_Part_1")
         {
-            StartCoroutine(EarTrainingExercise());
+            OnCompletingInterval_Part_1();
         }
     }
 
-    IEnumerator EarTrainingExercise()
+    void OnCompletingInterval_Part_1()
     {
-        yield return new WaitForSecondsRealtime(5);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 64))
+        {
+            if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60))
+            {
+                if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 69))
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
+            }
+        }
     }
 
     // Update is called once per frame
@@ -34,7 +42,7 @@ public class Level_2 : MonoBehaviour
         // This allows players to progress at their own pace
         if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60))
         {
-            Start();
+            OnCompletingInterval_Part_1();
         }
     }
 }

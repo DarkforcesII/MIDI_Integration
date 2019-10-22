@@ -26,18 +26,18 @@ public class MicrophoneInput : MonoBehaviour
     {
         //audioSource.Stop();
         //Start recording to audioclip from the mic
-        audioSource.clip = Microphone.Start("Realtek Mic (Realtek High Definition Audio)", true, 10, audioSampleRate);
+        audioSource.clip = Microphone.Start("Microphone (C-1U                     )", true, 10, audioSampleRate);
         audioSource.loop = true;
         // Mute the sound with an Audio Mixer group becuase we don't want the player to hear it
-        Debug.Log(Microphone.IsRecording("Realtek Mic (Realtek High Definition Audio)").ToString());
+        Debug.Log(Microphone.IsRecording("Microphone (C-1U                     )").ToString());
 
-        if (Microphone.IsRecording("Realtek Mic (Realtek High Definition Audio)"))
+        if (Microphone.IsRecording("Microphone (C-1U                     )"))
         { //check that the mic is recording, otherwise you'll get stuck in an infinite loop waiting for it to start
-            while (!(Microphone.GetPosition("Realtek Mic (Realtek High Definition Audio)") > 0))
+            while (!(Microphone.GetPosition("Microphone (C-1U                     )") > 0))
             {
             } // Wait until the recording has started. 
 
-            Debug.Log("recording started with " + "Realtek Mic (Realtek High Definition Audio)");
+            Debug.Log("recording started with " + "Microphone (C-1U                     )");
 
             // Start playing the audio source
             audioSource.Play();

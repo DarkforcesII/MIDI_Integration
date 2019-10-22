@@ -19,8 +19,8 @@ public class MicScript : MonoBehaviour
 
         // Start recording with built in Microphone and play recorded audio right away
         AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.clip = Microphone.Start("Realtek Mic (Realtek High Definition Audio)", true, 10, 48000);
-        Microphone.IsRecording("Realtek Mic (Realtek High Definition Audio)");
+        audioSource.clip = Microphone.Start("Microphone (C-1U                     )", true, 10, 48000);
+        Microphone.IsRecording("Microphone (C-1U                     )");
         audioSource.Play();
         audioSource.loop = true;
 
