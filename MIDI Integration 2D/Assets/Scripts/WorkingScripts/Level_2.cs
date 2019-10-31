@@ -32,7 +32,7 @@ public class Level_2 : MonoBehaviour
     void Update()
     {
         // This allows players to progress at their own pace
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60))
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60) || (Input.GetKeyDown(KeyCode.Keypad0)))
         {
             Start();
         }

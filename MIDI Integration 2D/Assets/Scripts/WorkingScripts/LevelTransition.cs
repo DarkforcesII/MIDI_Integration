@@ -95,5 +95,9 @@ public class LevelTransition : MonoBehaviour
         {
             StartCoroutine(Intervals_Part_1());
         }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
+        }
     }
 }
