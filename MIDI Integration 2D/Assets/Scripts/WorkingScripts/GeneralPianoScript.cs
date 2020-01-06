@@ -7,7 +7,7 @@ public class GeneralPianoScript : MonoBehaviour
 {
     [SerializeField] private AudioClip[] keyClips;
 
-    int i = 1;
+    int i = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -204,58 +204,58 @@ public class GeneralPianoScript : MonoBehaviour
     }
     private void Octave_4()
     {
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60) || Input.GetKeyUp(KeyCode.Keypad0)) //C
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60) || Input.GetKeyDown(KeyCode.Keypad0)) //C
         {
             AudioManager.Instance.PlaySFX(keyClips[39]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 61) || Input.GetKeyUp(KeyCode.Keypad1)) //C#
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 61) || Input.GetKeyDown(KeyCode.Keypad1)) //C#
         {
             AudioManager.Instance.PlaySFX(keyClips[40]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 62) || Input.GetKeyUp(KeyCode.Keypad2)) //D
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 62) || Input.GetKeyDown(KeyCode.Keypad2)) //D
         {
             AudioManager.Instance.PlaySFX(keyClips[41]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 63) || Input.GetKeyUp(KeyCode.Keypad3)) //D#
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 63) || Input.GetKeyDown(KeyCode.Keypad3)) //D#
         {
             AudioManager.Instance.PlaySFX(keyClips[42]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 64) || Input.GetKeyUp(KeyCode.Keypad4)) //E
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 64) || Input.GetKeyDown(KeyCode.Keypad4)) //E
         {
             AudioManager.Instance.PlaySFX(keyClips[43]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 65) || Input.GetKeyUp(KeyCode.Keypad5)) //F
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 65) || Input.GetKeyDown(KeyCode.Keypad5)) //F
         {
             AudioManager.Instance.PlaySFX(keyClips[44]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 66) || Input.GetKeyUp(KeyCode.Keypad6)) //F#
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 66) || Input.GetKeyDown(KeyCode.Keypad6)) //F#
         {
             AudioManager.Instance.PlaySFX(keyClips[45]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 67) || Input.GetKeyUp(KeyCode.Keypad7)) //G
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 67) || Input.GetKeyDown(KeyCode.Keypad7)) //G
         {
             AudioManager.Instance.PlaySFX(keyClips[46]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 68) || Input.GetKeyUp(KeyCode.Keypad8)) //G#
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 68) || Input.GetKeyDown(KeyCode.Keypad8)) //G#
         {
             AudioManager.Instance.PlaySFX(keyClips[47]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 69) || Input.GetKeyUp(KeyCode.Keypad9)) //A
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 69) || Input.GetKeyDown(KeyCode.Keypad9)) //A
         {
             AudioManager.Instance.PlaySFX(keyClips[48]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 70) || Input.GetKeyUp(KeyCode.T)) //A#
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 70) || Input.GetKeyDown(KeyCode.T)) //A#
         {
             AudioManager.Instance.PlaySFX(keyClips[49]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 71) || Input.GetKeyUp(KeyCode.E)) //B
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 71) || Input.GetKeyDown(KeyCode.E)) //B
         {
             AudioManager.Instance.PlaySFX(keyClips[50]);
         }
     }
     private void Octave_5()
     {
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72) || Input.GetKeyUp(KeyCode.E)) //C
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72) || Input.GetKeyDown(KeyCode.C)) //C
         {
             AudioManager.Instance.PlaySFX(keyClips[51]);
         }
@@ -414,6 +414,59 @@ public class GeneralPianoScript : MonoBehaviour
         }
     }
 
+    IEnumerator Octave4()
+    {
+        yield return null;
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60) || Input.GetKeyUp(KeyCode.Keypad0)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[39]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 61) || Input.GetKeyUp(KeyCode.Keypad1)) //C#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[40]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 62) || Input.GetKeyUp(KeyCode.Keypad2)) //D
+        {
+            AudioManager.Instance.PlaySFX(keyClips[41]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 63) || Input.GetKeyUp(KeyCode.Keypad3)) //D#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[42]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 64) || Input.GetKeyUp(KeyCode.Keypad4)) //E
+        {
+            AudioManager.Instance.PlaySFX(keyClips[43]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 65) || Input.GetKeyUp(KeyCode.Keypad5)) //F
+        {
+            AudioManager.Instance.PlaySFX(keyClips[44]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 66) || Input.GetKeyUp(KeyCode.Keypad6)) //F#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[45]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 67) || Input.GetKeyUp(KeyCode.Keypad7)) //G
+        {
+            AudioManager.Instance.PlaySFX(keyClips[46]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 68) || Input.GetKeyUp(KeyCode.Keypad8)) //G#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[47]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 69) || Input.GetKeyUp(KeyCode.Keypad9)) //A
+        {
+            AudioManager.Instance.PlaySFX(keyClips[48]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 70) || Input.GetKeyUp(KeyCode.T)) //A#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[49]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 71) || Input.GetKeyUp(KeyCode.E)) //B
+        {
+            AudioManager.Instance.PlaySFX(keyClips[50]);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -421,10 +474,15 @@ public class GeneralPianoScript : MonoBehaviour
         Octave_1();
         Octave_2();
         Octave_3();
-        Octave_4();
+        //Octave_4();
         Octave_5();
         Octave_6();
         Octave_7();
         Octave_8();
+        ChangeCounter();
+        if (i == 4)
+        {
+            StartCoroutine(Octave4());
+        }
     }
 }
