@@ -6,10 +6,31 @@ using MidiJack;
 public class GeneralPianoScript : MonoBehaviour
 {
     [SerializeField] private AudioClip[] keyClips;
+
+    int i = 1;
+
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    // Octave Controller
+    public void ChangeCounter()
+    {
+        // Moves Octave Down
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            i--;
+            Debug.Log("i = " + i);
+        }
+
+        // Moves Octave Up
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            i++;
+            Debug.Log("i = " + i);
+        }
     }
 
     // Called in update so notes in this ocatave can be played
