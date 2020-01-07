@@ -5,22 +5,28 @@ using MidiJack;
 
 public class GeneralPianoScript : MonoBehaviour
 {
+    // 0-87(1-88) for piano 
+    // 88 - for Electric Piano
 
     // TO Do: Add Color Functionality to the rest of the notes
 
     [SerializeField] private AudioClip[] keyClips;
 
-    int i = 4;
+    private int i = 4;
+    //string voice = "Piano";
+    private int voice = 100;
+    //private string electric_piano = "Electric_Pno";
 
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
         Debug.Log("i = " + i);
+        print("Piano");
     }
 
     // Octave Controller
-    public void ChangeCounter()
+    private void ChangeCounter()
     {
         // Moves Octave Down
         if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -34,6 +40,21 @@ public class GeneralPianoScript : MonoBehaviour
         {
             i++;
             Debug.Log("i = " + i);
+        }
+    }
+
+    // Voice Controller
+    private void ChangeVoice()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            voice++;
+            print("ElePno");
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            voice--;
+            print("Pno");
         }
     }
 
@@ -418,10 +439,243 @@ public class GeneralPianoScript : MonoBehaviour
         }
     }
 
-    IEnumerator Octave4()
-    {
-        yield return null;
+    // For Octave Controller
 
+    // Piano
+    private void MidiPnoOctave_0()
+    {
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 69)) //A
+        {
+            AudioManager.Instance.PlaySFX(keyClips[0]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 70)) //A#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[1]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 71)) //B
+        {
+            AudioManager.Instance.PlaySFX(keyClips[2]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[3]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 73)) //C#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[4]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 74)) //D
+        {
+            AudioManager.Instance.PlaySFX(keyClips[5]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 75)) //D#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[6]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 76)) //E
+        {
+            AudioManager.Instance.PlaySFX(keyClips[7]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 77)) //F
+        {
+            AudioManager.Instance.PlaySFX(keyClips[8]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 78)) //F#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[9]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 79)) //G
+        {
+            AudioManager.Instance.PlaySFX(keyClips[10]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 80)) //G#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[11]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 81)) //A
+        {
+            AudioManager.Instance.PlaySFX(keyClips[12]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 82)) //A#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[13]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 83)) //B
+        {
+            AudioManager.Instance.PlaySFX(keyClips[14]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 84)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[15]);
+        }
+    }
+    private void MidiPnoOctave_1()
+    {
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[3]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 61)) //C#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[4]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 62)) //D
+        {
+            AudioManager.Instance.PlaySFX(keyClips[5]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 63)) //D#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[6]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 64)) //E
+        {
+            AudioManager.Instance.PlaySFX(keyClips[7]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 65)) //F
+        {
+            AudioManager.Instance.PlaySFX(keyClips[8]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 66)) //F#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[9]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 67)) //G
+        {
+            AudioManager.Instance.PlaySFX(keyClips[10]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 68)) //G#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[11]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 69)) //A
+        {
+            AudioManager.Instance.PlaySFX(keyClips[12]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 70)) //A#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[13]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 71)) //B
+        {
+            AudioManager.Instance.PlaySFX(keyClips[14]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[15]);
+        }
+    }
+    private void MidiPnoOctave_2()
+    {
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[15]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 61)) //C#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[16]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 62)) //D
+        {
+            AudioManager.Instance.PlaySFX(keyClips[17]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 63)) //D#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[18]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 64)) //E
+        {
+            AudioManager.Instance.PlaySFX(keyClips[19]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 65)) //F
+        {
+            AudioManager.Instance.PlaySFX(keyClips[20]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 66)) //F#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[21]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 67)) //G
+        {
+            AudioManager.Instance.PlaySFX(keyClips[22]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 68)) //G#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[23]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 69)) //A
+        {
+            AudioManager.Instance.PlaySFX(keyClips[24]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 70)) //A#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[25]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 71)) //B
+        {
+            AudioManager.Instance.PlaySFX(keyClips[26]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[27]);
+        }
+    }
+    private void MidiPnoOctave_3()
+    {
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[27]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 61)) //C#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[28]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 62)) //D
+        {
+            AudioManager.Instance.PlaySFX(keyClips[29]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 63)) //D#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[30]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 64)) //E
+        {
+            AudioManager.Instance.PlaySFX(keyClips[31]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 65)) //F
+        {
+            AudioManager.Instance.PlaySFX(keyClips[32]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 66)) //F#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[33]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 67)) //G
+        {
+            AudioManager.Instance.PlaySFX(keyClips[34]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 68)) //G#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[35]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 69)) //A
+        {
+            AudioManager.Instance.PlaySFX(keyClips[36]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 70)) //A#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[37]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 71)) //B
+        {
+            AudioManager.Instance.PlaySFX(keyClips[38]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[39]);
+        }
+    }
+    private void MidiPnoOctave_4()
+    {
         if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60) || Input.GetKeyDown(KeyCode.Keypad0)) //C
         {
             AudioManager.Instance.PlaySFX(keyClips[39]);
@@ -470,65 +724,247 @@ public class GeneralPianoScript : MonoBehaviour
         {
             AudioManager.Instance.PlaySFX(keyClips[50]);
         }
-    }
-
-    IEnumerator Octave5()
-    {
-        yield return null;
-
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72) || Input.GetKeyDown(KeyCode.Keypad0)) //C
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72)) //C
         {
             AudioManager.Instance.PlaySFX(keyClips[51]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 73) || Input.GetKeyDown(KeyCode.Keypad1)) //C#
+    }
+    private void MidiPnoOctave_5()
+    {
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60) || Input.GetKeyDown(KeyCode.C)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[51]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 61)) //C#
         {
             AudioManager.Instance.PlaySFX(keyClips[52]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 74) || Input.GetKeyDown(KeyCode.Keypad2)) //D
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 62)) //D
         {
             AudioManager.Instance.PlaySFX(keyClips[53]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 75) || Input.GetKeyDown(KeyCode.Keypad3)) //D#
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 63)) //D#
         {
             AudioManager.Instance.PlaySFX(keyClips[54]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 76) || Input.GetKeyDown(KeyCode.Keypad4)) //E
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 64)) //E
         {
             AudioManager.Instance.PlaySFX(keyClips[55]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 77) || Input.GetKeyDown(KeyCode.Keypad5)) //F
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 65)) //F
         {
             AudioManager.Instance.PlaySFX(keyClips[56]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 78) || Input.GetKeyDown(KeyCode.Keypad6)) //F#
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 66)) //F#
         {
             AudioManager.Instance.PlaySFX(keyClips[57]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 79) || Input.GetKeyDown(KeyCode.Keypad7)) //G
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 67)) //G
         {
             AudioManager.Instance.PlaySFX(keyClips[58]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 80) || Input.GetKeyDown(KeyCode.Keypad8)) //G#
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 68)) //G#
         {
             AudioManager.Instance.PlaySFX(keyClips[59]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 81) || Input.GetKeyDown(KeyCode.Keypad9)) //A
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 69)) //A
         {
             AudioManager.Instance.PlaySFX(keyClips[60]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 82) || Input.GetKeyDown(KeyCode.T)) //A#
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 70)) //A#
         {
             AudioManager.Instance.PlaySFX(keyClips[61]);
         }
-        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 83) || Input.GetKeyDown(KeyCode.E)) //B
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 71)) //B
         {
             AudioManager.Instance.PlaySFX(keyClips[62]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[63]);
+        }
+
+    }
+    private void MidiPnoOctave_6()
+    {
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[63]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 61)) //C#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[64]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 62)) //D
+        {
+            AudioManager.Instance.PlaySFX(keyClips[65]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 63)) //D#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[66]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 64)) //E
+        {
+            AudioManager.Instance.PlaySFX(keyClips[67]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 65)) //F
+        {
+            AudioManager.Instance.PlaySFX(keyClips[68]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 66)) //F#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[69]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 67)) //G
+        {
+            AudioManager.Instance.PlaySFX(keyClips[70]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 68)) //G#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[71]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 69)) //A
+        {
+            AudioManager.Instance.PlaySFX(keyClips[72]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 70)) //A#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[73]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 71)) //B
+        {
+            AudioManager.Instance.PlaySFX(keyClips[74]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[75]);
+        }
+    }
+    private void MidiPnoOctave_7()
+    {
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[75]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 61)) //C#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[76]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 62)) //D
+        {
+            AudioManager.Instance.PlaySFX(keyClips[77]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 63)) //D#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[78]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 64)) //E
+        {
+            AudioManager.Instance.PlaySFX(keyClips[79]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 65)) //F
+        {
+            AudioManager.Instance.PlaySFX(keyClips[80]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 66)) //F#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[81]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 67)) //G
+        {
+            AudioManager.Instance.PlaySFX(keyClips[82]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 68)) //G#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[83]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 69)) //A
+        {
+            AudioManager.Instance.PlaySFX(keyClips[84]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 70)) //A#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[85]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 71)) //B
+        {
+            AudioManager.Instance.PlaySFX(keyClips[86]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[87]);
+        }
+    }
+    private void MidiPnoOctave_8()
+    {
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[87]);
+        }
+    }
+
+    // Electric Piano
+    private void EPnoOctave_4()
+    {
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 60) || Input.GetKeyDown(KeyCode.Keypad0)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[88]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 61) || Input.GetKeyDown(KeyCode.Keypad1)) //C#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[89]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 62) || Input.GetKeyDown(KeyCode.Keypad2)) //D
+        {
+            AudioManager.Instance.PlaySFX(keyClips[90]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 63) || Input.GetKeyDown(KeyCode.Keypad3)) //D#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[91]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 64) || Input.GetKeyDown(KeyCode.Keypad4)) //E
+        {
+            AudioManager.Instance.PlaySFX(keyClips[92]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 65) || Input.GetKeyDown(KeyCode.Keypad5)) //F
+        {
+            AudioManager.Instance.PlaySFX(keyClips[93]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 66) || Input.GetKeyDown(KeyCode.Keypad6)) //F#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[94]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 67) || Input.GetKeyDown(KeyCode.Keypad7)) //G
+        {
+            AudioManager.Instance.PlaySFX(keyClips[95]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 68) || Input.GetKeyDown(KeyCode.Keypad8)) //G#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[96]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 69) || Input.GetKeyDown(KeyCode.Keypad9)) //A
+        {
+            AudioManager.Instance.PlaySFX(keyClips[97]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 70) || Input.GetKeyDown(KeyCode.T)) //A#
+        {
+            AudioManager.Instance.PlaySFX(keyClips[98]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 71) || Input.GetKeyDown(KeyCode.E)) //B
+        {
+            AudioManager.Instance.PlaySFX(keyClips[99]);
+        }
+        if (MidiDriver.Instance.GetKeyDown(MidiChannel.All, 72)) //C
+        {
+            AudioManager.Instance.PlaySFX(keyClips[100]);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Full keyboard range, no octave or voice switch
+        #region
         /*Octave_0();
         Octave_1();
         Octave_2();
@@ -538,52 +974,65 @@ public class GeneralPianoScript : MonoBehaviour
         Octave_6();
         Octave_7();
         Octave_8();*/
+        #endregion
 
-        // Octave Controller
+        // Piano Octave Controller
+        #region
         ChangeCounter();
-        if (i == 0)
+        if (i == 0 && voice == 100)
         {
-            Octave_0();
+            MidiPnoOctave_0();
         }
 
-        if (i == 1)
+        if (i == 1 && voice == 100)
         {
-            Octave_1();
+            MidiPnoOctave_1();
         }
 
-        if (i == 2)
+        if (i == 2 && voice == 100)
         {
-            Octave_2();
+            MidiPnoOctave_2();
         }
 
-        if (i == 3)
+        if (i == 3 && voice == 100)
         {
-            Octave_3();
+            MidiPnoOctave_3();
         }
 
-        if (i == 4)
+        if (i == 4 && voice == 100)
         {
-            Octave_4();
+            MidiPnoOctave_4();
         }
 
-        if (i == 5)
+        if (i == 5 && voice == 100)
         {
-            Octave_5();
+            MidiPnoOctave_5();
         }
 
-        if (i == 6)
+        if (i == 6 && voice == 100)
         {
-            Octave_6();
+            MidiPnoOctave_6();
         }
 
-        if (i == 7)
+        if (i == 7 && voice == 100)
         {
-            Octave_7();
+            MidiPnoOctave_7();
         }
 
-        if (i == 8)
+        if (i == 8 && voice == 100)
         {
-            Octave_8();
+            MidiPnoOctave_8();
         }
+        #endregion
+
+        // Voice Changer
+        ChangeVoice();
+
+        // Electric Piano Octave Controller
+        if (i == 4 && voice == 101)
+        {
+            EPnoOctave_4();
+        }
+
     }
 }
