@@ -1090,6 +1090,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1512ecdcf049cd34c97b9fb9fac39990, type: 3}
   - {fileID: 8300000, guid: 171c20e52db1fb74c94bdd8bb58a5bca, type: 3}
   - {fileID: 8300000, guid: 99043d91f9c0e414288a91ebc0788b12, type: 3}
+  voices:
+  - Piano
+  - Electric Piano
+  - Synth
 --- !u!4 &1447358704
 Transform:
   m_ObjectHideFlags: 0

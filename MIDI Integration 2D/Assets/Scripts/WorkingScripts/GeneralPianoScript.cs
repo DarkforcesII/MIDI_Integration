@@ -13,14 +13,13 @@ public class GeneralPianoScript : MonoBehaviour
     [SerializeField] private AudioClip[] keyClips;
 
     private int i = 4;
-    //string voice = "Piano";
     private int voice = 100;
-    //private string electric_piano = "Electric_Pno";
 
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+    
         Debug.Log("i = " + i);
         print("Piano");
     }
@@ -46,15 +45,15 @@ public class GeneralPianoScript : MonoBehaviour
     // Voice Controller
     private void ChangeVoice()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) && voice == 100)
         {
             voice++;
-            print("ElePno");
+            Debug.Log("ElePno" + voice);
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && voice == 101)
         {
             voice--;
-            print("Pno");
+            Debug.Log("Pno" + voice);
         }
     }
 
