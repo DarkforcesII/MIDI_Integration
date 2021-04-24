@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using MidiJack;
+using System;
 
 public class GeneralPianoScript : MonoBehaviour
 {
@@ -10,10 +12,14 @@ public class GeneralPianoScript : MonoBehaviour
 
     // TO Do: Add Color Functionality to the rest of the notes
 
-    [SerializeField] private AudioClip[] keyClips;
+    [SerializeField] public AudioClip[] keyClips;
 
-    private int i = 4;
+    public int i = 4;
     private int voice = 100;
+
+    // UI elements
+    public Text octaveNumber;
+    public Button octaveDownButton, octaveUpButton;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +28,30 @@ public class GeneralPianoScript : MonoBehaviour
     
         Debug.Log("i = " + i);
         print("Piano");
+
+        octaveNumber.text = i.ToString();
+        octaveDownButton.onClick.AddListener(TransposeDown);
+        octaveUpButton.onClick.AddListener(TransposeUp);
+    }
+
+    private void TransposeUp()
+    {
+        if (i < 8)
+        {
+            i++;
+            octaveNumber.text = i.ToString();
+            Debug.Log("i = " + i);
+        }
+    }
+
+    private void TransposeDown()
+    {
+        if (i > 0)
+        {
+            i--;
+            octaveNumber.text = i.ToString();
+            Debug.Log("i = " + i);
+        }
     }
 
     // Octave Controller
@@ -30,15 +60,23 @@ public class GeneralPianoScript : MonoBehaviour
         // Moves Octave Down
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            i--;
-            Debug.Log("i = " + i);
+            if (i > 0)
+            {
+                i--;
+                octaveNumber.text = i.ToString();
+                Debug.Log("i = " + i);
+            }
         }
 
         // Moves Octave Up
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            i++;
-            Debug.Log("i = " + i);
+            if (i < 8)
+            {
+                i++;
+                octaveNumber.text = i.ToString();
+                Debug.Log("i = " + i);
+            }
         }
     }
 
@@ -1315,7 +1353,7 @@ public class GeneralPianoScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Full keyboard range, no octave or voice switch
+        // Full keyboard range, no octave or voice switch, disabled
         #region
         /*Octave_0();
         Octave_1();
@@ -1328,8 +1366,9 @@ public class GeneralPianoScript : MonoBehaviour
         Octave_8();*/
         #endregion
 
-        // Piano Octave Controller
+        // Piano Octave Controller, disabled
         #region
+        /*
         if (i == 0 && voice == 100)
         {
             MidiPnoOctave_0();
@@ -1373,11 +1412,12 @@ public class GeneralPianoScript : MonoBehaviour
         if (i == 8 && voice == 100)
         {
             MidiPnoOctave_8();
-        }
+        }*/
         #endregion
 
         // Electric Piano Octave Controller
         #region
+        /*
         if (i == 0 && voice == 101)
         {
             MidiEPOctave_0();
@@ -1425,10 +1465,10 @@ public class GeneralPianoScript : MonoBehaviour
         #endregion
 
         // Voice Changer
-        ChangeVoice();
+        //ChangeVoice();
 
         // For Octave Controller
-        ChangeCounter();
+        //ChangeCounter();
 
     }
 }
